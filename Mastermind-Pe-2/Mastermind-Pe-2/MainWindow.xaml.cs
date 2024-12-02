@@ -55,8 +55,12 @@ namespace Mastermind_Pe_2
             Titel = $"{TitelAppears1}, {TitelAppears2}, {TitelAppears3}, {TitelAppears4}";
             this.Title = $"Mastermind ({Titel})";
         }
+        
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            startgame();
+
+
             string kleur1 = ComboBox1.SelectedItem?.ToString();
             string kleur2 = ComboBox2.SelectedItem?.ToString();
             string kleur3 = ComboBox3.SelectedItem?.ToString();
@@ -66,14 +70,12 @@ namespace Mastermind_Pe_2
 
             if (kleur1 == TitelAppears1 && kleur2 == TitelAppears2 && kleur3 == TitelAppears3 && kleur4 == TitelAppears4)
             {
-                MessageBox.Show($"juist!! In {attempts} pogingen");
-                AskToReplay();
+
                 return;
             }
             if (attempts >= 10)
             {
-                MessageBox.Show($"Gefaald!! De code is: {Titel}");
-                AskToReplay();
+
                 return;
             }
             int scorePenalty = 0;
@@ -141,10 +143,6 @@ namespace Mastermind_Pe_2
             ListBoxHistoriek.Items.Clear();
             TitelAppearsAbove();
             ResetBorder();
-            ComboBox1.SelectedIndex = -1;
-            ComboBox2.SelectedIndex = -1;
-            ComboBox3.SelectedIndex = -1;
-            ComboBox4.SelectedIndex = -1;
             this.Title = $"Mastermind - Nieuwe code: {Titel}";
         }
         private void ResetBorder()
@@ -243,10 +241,10 @@ namespace Mastermind_Pe_2
         }
         private void Highscores_Click(object sender, RoutedEventArgs e)
         {
-            string highscores = "Ahmed -7 pogingen - 42/100\n" + "Piet -5 pogingen - 61/100\n"+
-                                "Senne -8 pogingen - 17/100\n" + "Suyen -3 pogingen - 88/100\n";
+            string highscores = nieuweSpeler + attempts + Score.Content;
 
             MessageBox.Show(highscores, "Mastermind Highscores:");
         }
+        
     }
 }

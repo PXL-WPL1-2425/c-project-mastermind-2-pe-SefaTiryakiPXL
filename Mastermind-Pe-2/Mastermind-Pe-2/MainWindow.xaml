@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:Mastermind_Pe_2"
         mc:Ignorable="d"
         Title="Mastermind" Height="500" Width="800" Background="DarkCyan">
-    
-    
+
+
     <Grid>
 
         <Grid.RowDefinitions>
@@ -57,5 +57,6 @@
                 <MenuItem Header="Aantal pogingen" Click="AantalPogingen_Click"/>
             </MenuItem>
         </Menu>
+        <TextBox Name="NieuweUser" HorizontalAlignment="Center" Margin="0,71,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>
