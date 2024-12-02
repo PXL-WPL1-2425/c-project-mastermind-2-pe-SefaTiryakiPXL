@@ -55,7 +55,16 @@ namespace Mastermind_Pe_2
             Titel = $"{TitelAppears1}, {TitelAppears2}, {TitelAppears3}, {TitelAppears4}";
             this.Title = $"Mastermind ({Titel})";
         }
-        
+        public void startgame()
+        {
+            string nieuweSpeler = NieuweUser.Text;
+
+            if (string.IsNullOrWhiteSpace(nieuweSpeler))
+            {
+                MessageBox.Show("Type iets in userbox", "Fout", MessageBoxButton.OK);
+                return;
+            }
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             startgame();
